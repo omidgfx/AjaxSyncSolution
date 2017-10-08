@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="syncsolution.min.js"></script>
+    <script type="text/javascript">
+        var quoteService = new sync.Service('quote_service');
+        quoteService.setDataEmitter(function () {
+            var rand = Math.floor(Math.random() * 20) + 1;
+            return {'random_quote': rand};
+        });
+        quoteService.setListeners(
+            {
+                start     : function (service, request) {
+                    console.log("Start Synchronization.\tService: " + service.getDataKey());
+                },
+                success   : function (data, service, textStatus, jqXHR) {
+                    console.log("Synchronized successfully.\tService: " + service.getDataKey());
+                    // set data to html elements
+                    document.getElementById('number').innerText = data['quote']['number'];
+                    document.getElementById('text').innerText   = data['quote']['text'];
+                    document.getElementById('name').innerText   = data['quote']['name'];
+                },
+                error     : function (service, xhr) {
+                    console.log("An error occurred in service.\tService: " + service.getDataKey());
+                },
+                failedSync: function (service, jqXHR) {
+                    console.log("An error occurred in whole synchronization process.\tService: " + service.dataKey);
+                },
+                complete  : function (service, jqXHR) {
+                    console.log("Synchronization completed.\tService: " + service.getDataKey());
+                }
+            });
+        quoteService.register();
+        sync.init('sync_controller.php', 10);
+    </script>
+    <style>
+        .quote {
+            font-size     : 12px;
+            font-family   : sans-serif;
+            margin        : 20px auto;
+            border        : 2px solid #80a83d;
+            background    : #daf9d3;
+            color         : #80a83d;
+            width         : 400px;
+            position      : relative;
+            padding       : 10px;
+            border-radius : 8px;
+        }
+
+        .quote:before {
+            position    : absolute;
+            left        : -.5em;
+            content     : '“';
+            font-family : sans-serif;
+            top         : 0;
+            font-size   : 120px;
+            float       : left;
+        }
+
+        #number,
+        #text,
+        #name {
+            margin : 0;
+        }
+
+        #number {
+            font-size     : 12px;
+            float         : left;
+            margin        : 4px 8px 0 0;
+            padding       : 4px 6px;
+            background    : #80a83d;
+            color         : #fff;
+            border-radius : 5px;
+        }
+
+        #name {
+            text-align  : right;
+            color       : #81a673;
+            margin-top  : 16px;
+            padding-top : 8px;
+            border-top  : 4px dotted #cfebc8;
+        }
+
+    </style>
+</head>
+<body>
+<div class="quote">
+    <h2 id="number"></h2>
+    <h3 id="text"></h3>
+    <h4 id="name"></h4>
+</div>
+</body>
+</html>

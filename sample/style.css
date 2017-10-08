@@ -1,0 +1,421 @@
+body, html {
+    font-family : "Segoe UI", sans-serif;
+    font-size   : 11px;
+}
+
+body, html, * {
+    cursor             : default;
+    box-sizing         : border-box;
+    -moz-box-sizing    : border-box;
+    -webkit-box-sizing : border-box;
+    -o-box-sizing      : border-box;
+    -ms-box-sizing     : border-box;
+}
+
+.container {
+    text-align : center;
+}
+
+.service {
+    display        : inline-block;
+    width          : 350px;
+    border         : 1px solid #000;
+    vertical-align : top;
+    text-align     : left;
+    border-radius  : 4px;
+    overflow       : hidden;
+}
+
+.service h3,
+.service h2 {
+    background : #F0F0F0;
+    margin     : 0;
+    font-size  : 14px;
+    padding    : 16px;
+    position   : relative;
+}
+
+.service h3 label {
+    font-size : 10px;
+    display   : inline-block;
+    float     : right;
+    color     : #576076;
+}
+
+.service-footer {
+    background : #000;
+    color      : #FFF;
+}
+
+.service h3 span {
+    font-size : 10px;
+    color     : #576076;
+}
+
+.service h2 button,
+.service h3 button {
+    float   : right;
+    display : inline-block;
+}
+
+.service h3 {
+    background : #272B35;
+    color      : #FFF;
+}
+
+.list {
+    max-height : 280px;
+    min-height : 280px;
+    overflow-x : hidden;
+    overflow-y : scroll;
+}
+
+.box {
+    max-height : 280px;
+    min-height : 280px;
+}
+
+.list {
+    border-bottom : 1px solid #AAA;
+}
+
+.logs {
+    background : #393F4C;
+    max-height : 300px;
+    min-height : 300px;
+    overflow-x : hidden;
+    overflow-y : auto;
+    position   : relative;
+}
+
+.center {
+    text-align : center;
+}
+
+.log.green b,
+.green {
+    color : #8DAA41;
+}
+
+.log.green { border-left-color : #8DAA41 }
+
+.log.orange b,
+.orange {
+    color : #D27E01;
+}
+
+.log.orange { border-left-color : #B46D01 }
+
+.log.red b,
+.red {
+    color : #C94A56;
+}
+
+.log.red { border-left-color : #9A3C47 }
+
+.log.blue b,
+.blue {
+    color : #6291CA;
+}
+
+.log.blue { border-left-color : #496C97 }
+
+.log,
+.list-item {
+    border-radius : 4px;
+    margin        : 2px;
+    border        : 1px solid #DDD;
+    line-height   : 1em;
+    padding       : 10px 8px;
+    transition    : all ease .5s;
+    background    : transparent;
+}
+
+.list-item * {
+    cursor : pointer;
+}
+
+.list-item {
+    opacity : .5;
+}
+
+.list-item.change-off {
+    background : #CCC;
+}
+
+.list-item.change-on {
+    background : #C6DDA1;
+}
+
+.list-item.online {
+    opacity : 1;
+}
+
+.list-item:hover {
+    cursor     : pointer;
+    background : #FAFAFA;
+}
+
+.list-item.online span {
+    font-weight : bold;
+    color       : #000;
+}
+
+.list-item span {
+    margin-left : 8px;
+    color       : #666;
+}
+
+.list-item b {
+    float : right;
+    color : #999;
+}
+
+.list-item b:before {
+    content        : '•';
+    font-size      : 32px;
+    line-height    : 6px;
+    vertical-align : top;
+    display        : inline-block;
+}
+
+.list-item.online b {
+    color : #4AAA00;
+}
+
+.log {
+    font-family   : Consolas, monospace;
+    border        : none;
+    overflow      : hidden;
+    line-height   : 1.3em;
+    border-left   : 4px solid #475059;
+    border-radius : 0;
+    margin        : 0;
+    color         : #8FA1B2;
+    padding       : 8px 8px 0;
+    border-bottom : 1px solid #525C66;
+}
+
+.log a {
+    color  : #388BDB;
+    cursor : pointer;
+}
+
+.log span {
+    display : block;
+}
+
+.log b {
+    display   : block;
+    font-size : 12px;
+}
+
+.log i {
+    display       : block;
+    font-weight   : bold;
+    color         : #5A6670;
+    font-style    : normal;
+    margin-top    : 4px;
+    margin-bottom : 4px;
+}
+
+.toolbar {
+    background    : #FAFAFA;
+    padding       : 8px;
+    border-bottom : 1px solid #DDD;
+}
+
+.e {
+    font-size  : 15px;
+    font-style : normal;
+}
+
+.toolbar .bt {
+    text-align    : center;
+    float         : left;
+    margin        : 0 8px;
+    padding       : 4px 8px;
+    cursor        : pointer;
+    position      : relative;
+    border-radius : 5px;
+}
+
+.toolbar .bt:hover {
+    background : #DDD;
+}
+
+.toolbar .bt .notif {
+    transition    : background .5s ease;
+    position      : absolute;
+    background    : #E70000;
+    color         : #FFF;
+    line-height   : 1em;
+    top           : -.5em;
+    right         : -.5em;
+    box-shadow    : 0 1px 2px rgba(0, 0, 0, .5);
+    border-radius : 50px;
+    padding       : 2px 5px 3px 5px;
+}
+
+.toolbar .bt .notif.changed {
+    background : #FF4C00;
+}
+
+.clearfix {
+    content : ' ';
+    clear   : both;
+    display : table;
+}
+
+.statistic {
+    background    : #FAFAFA;
+    padding       : 16px 8px;
+    border-bottom : 1px solid #DDD;
+}
+
+.statistic .title {
+    margin-right : 16px;
+}
+
+.statistic .desc {
+    font-weight : bold;
+}
+
+.statistic .barchart {
+    background     : #FFF;
+    font-size      : 4px;
+    display        : inline-block;
+    width          : 18.5em;
+    height         : 8em;
+    box-shadow     : 0 .25em .5em rgba(0, 0, 0, 0.2);
+    overflow       : hidden;
+    padding        : 0 .25em;
+    vertical-align : middle;
+    border         : .25em solid #DDD;
+    border-radius  : .5em;
+    position       : relative;
+}
+
+.statistic .barchart i:first-child {
+    margin-left : 0;
+}
+
+.statistic .barchart span {
+    font-size   : 11px;
+    display     : block;
+    text-align  : center;
+    line-height : 34px;
+    color       : #777;
+}
+
+.statistic .barchart i {
+    opacity     : 1;
+    margin-top  : .25em;
+    transition  : all ease-in-out .3s, opacity linear .1s;
+    float       : left;
+    display     : inline-block;
+    width       : 1em;
+    height      : 7em;
+    border      : 0 solid transparent;
+    margin-left : .5em;
+    background  : #F6F6F6;
+}
+
+.statistic .barchart i:hover {
+    opacity : .7;
+}
+
+.statistic .barchart-legend {
+    margin-top    : 8px;
+    display       : inline-block;
+    line-height   : 1em;
+    border        : 1px solid #DDDD;
+    padding       : 8px;
+    font-size     : 10px;
+    background    : #FFFF;
+    border-radius : 4px;
+}
+
+.statistic .barchart-legend span {
+    display     : block;
+    width       : 95px;
+    line-height : 1em;
+    float       : left;
+    transition  : all ease-in-out .3s !important;
+}
+
+.statistic .barchart-legend span b {
+    color : #000;
+}
+
+.statistic .barchart-legend span:before {
+    content     : ' ';
+    width       : .5em;
+    display     : inline-block;
+    height      : 1em;
+    border-left : 1em solid;
+}
+
+.e.f:before { content : '🙎' }
+
+.e.m:before { content : '🙎‍♂️' }
+
+.canvas {
+    border         : 1px solid #F0F0F0;
+    background     : #FFF;
+    margin         : 8px;
+    display        : inline-block;
+    vertical-align : middle;
+    padding        : 1px;
+}
+
+@-webkit-keyframes shine {
+    to {
+        background-position : -200% center;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position : -200% center;
+    }
+}
+
+footer {
+    padding    : 32px;
+    text-align : center;
+}
+footer .copyright a {
+    text-decoration : none;
+    cursor          : pointer;
+    background              : linear-gradient(to right, #9A3C47 20%, #9A3C47 35%, #fff 40%, #9A3C47 45%);
+    background              : -webkit-linear-gradient(left, #9A3C47 20%, #9A3C47 35%, #fff 40%, #9A3C47 45%);
+    background-size         : 400% auto;
+    color                   : #000;
+    background-clip         : text;
+    text-fill-color         : transparent;
+    -webkit-background-clip : text;
+    -webkit-text-fill-color : transparent;
+    -webkit-animation       : shine 8s linear infinite;
+    animation               : shine 8s linear infinite;
+
+}
+footer .copyright {
+    display                 : block;
+    font-size               : 9px;
+    font-weight             : bolder;
+    font-family             : Verdana;
+    background              : linear-gradient(to right, #AAA 20%, #AAA 35%, #000 40%, #AAA 45%);
+    background              : -webkit-linear-gradient(left, #AAA 20%, #AAA 35%, #000 40%, #AAA 45%);
+    background-size         : 200% auto;
+    color                   : #000;
+    background-clip         : text;
+    text-fill-color         : transparent;
+    -webkit-background-clip : text;
+    -webkit-text-fill-color : transparent;
+    -webkit-animation       : shine 8s linear infinite;
+    animation               : shine 8s linear infinite;
+}
+.syncalt{
+    padding: 8px;
+}

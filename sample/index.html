@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../src/js/syncsolution.min.js"></script>
+
+    <script type="text/javascript" src="my_script.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+</head>
+<body class="container">
+<h1 id="c">Ajax Sync Solution
+    <button type="button" data-sync-toggle="">Disable Sync</button>
+</h1>
+<div class="service friends">
+    <h2>Friends:
+        <button type="button" data-service-toggle="friends">Disable Service</button>
+    </h2>
+    <div class="list" id="friendsList">
+        <div class="list-item" data-friend-id="1"><i class="e f"></i><span>Janis Mckenzie</span><b></b></div>
+        <div class="list-item" data-friend-id="2"><i class="e m"></i><span>Gaston Glenn</span><b></b></div>
+        <div class="list-item" data-friend-id="3"><i class="e m"></i><span>Noel Joy</span><b></b></div>
+        <div class="list-item" data-friend-id="4"><i class="e f"></i><span>Brittany Robertson</span><b></b></div>
+        <div class="list-item" data-friend-id="5"><i class="e m"></i><span>Hugo Quinn</span><b></b></div>
+        <div class="list-item" data-friend-id="6"><i class="e f"></i><span>Mariah Jackson</span><b></b></div>
+        <div class="list-item" data-friend-id="7"><i class="e m"></i><span>Sylvester Saylor</span><b></b></div>
+    </div>
+    <h3>Logs:
+        <span>(Limit 500)</span>
+        <label><input type="checkbox" checked="checked" title="" data-toggle-autoscroll="#logs_friends">Auto Scroll</label>
+        <button type="button" data-clearlog="#logs_friends">Clear Logs</button>
+    </h3>
+    <div class="logs" id="logs_friends"></div>
+    <div class="service-footer">
+        <label><input type="checkbox" checked="checked" data-toggle-logs="#logs_friends" title=""> Enable Logging</label>
+    </div>
+</div>
+<div class="service notifications">
+    <h2 id="notifications">Notifications:
+        <button type="button" data-service-toggle="notifications">Disable Service</button>
+    </h2>
+    <div class="box">
+        <div class="toolbar">
+            <div class="bt"><i class="e">✉️</i><b data-notif="" data-name="mails" class="notif" style="display:none;"></b></div>
+            <div class="bt"><i class="e">📞</i><b data-notif="" data-name="calls" class="notif" style="display:none;"></b></div>
+            <div class="bt"><i class="e">🔔</i><b data-notif="" data-name="notifs" class="notif" style="display:none;"></b></div>
+            <div class="bt"><i class="e">🙎‍♂️</i><b data-notif="" data-name="friends" class="notif" style="display:none;"></b></div>
+            <div class="bt"><i class="e">🖨</i><b data-notif="" data-name="prints" class="notif" style="display:none;"></b></div>
+            <div class="bt"><i class="e">📡</i><b data-notif="" data-name="antenna" class="notif" style="display:none;"></b></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="syncalt">
+            <b>Alternative!</b><br><span>Works in every <b>2 Times</b> of synchronize</span>
+            <h1>
+                Synchronize counter: <b id="syncst">0</b>
+            </h1>
+        </div>
+    </div>
+    <h3>Logs:
+        <span>(Limit 500)</span>
+        <label><input type="checkbox" checked="checked" title="" data-toggle-autoscroll="#logs_notifications">Auto Scroll</label>
+        <button type="button" data-clearlog="#logs_notifications">Clear Logs</button>
+    </h3>
+    <div class="logs" id="logs_notifications"></div>
+    <div class="service-footer">
+        <label><input type="checkbox" checked="checked" data-toggle-logs="#logs_notifications" title=""> Enable Logging</label>
+    </div>
+</div>
+<div class="service statistics">
+    <h2>Statistics:
+        <button type="button" data-service-toggle="statistics">Disable Service</button>
+    </h2>
+    <div class="list">
+        <div class="statistic">
+            <span class="title">Population:</span>
+            <span class="desc red" id="population">Initializing...</span>
+        </div>
+        <div class="statistic">
+            <span class="title">Random bar chart:</span>
+            <div class="barchart" id="barchart">
+                <span>Init...</span>
+            </div>
+            <div class="clearfix"></div>
+            <div class="barchart-legend" id="barchar-legend"></div>
+        </div>
+        <div class="statistic">
+            <span class="title">Random polygon:</span>
+            <canvas class="canvas" width="150" height="150" id="polygon-canvas"></canvas>
+        </div>
+    </div>
+    <h3>Logs:
+        <span>(Limit 500)</span>
+        <label><input type="checkbox" checked="checked" title="" data-toggle-autoscroll="#logs_statistics">Auto Scroll</label>
+        <button type="button" data-clearlog="#logs_statistics">Clear Logs</button>
+    </h3>
+    <div class="logs" id="logs_statistics"></div>
+    <div class="service-footer">
+        <label><input type="checkbox" checked="checked" data-toggle-logs="#logs_statistics" title=""> Enable Logging</label>
+    </div>
+</div>
+<footer>
+    <a href="https://github.com"></a>
+    <div class="copyright">Powered by <a href="https://github.com/pejmanchatrrooz" target="_blank">Pejman Chatrrooz</a></div>
+</footer>
+</body>
+</html>
